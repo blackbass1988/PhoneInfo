@@ -8,3 +8,8 @@
 *.war
 *.ear
 target/
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
