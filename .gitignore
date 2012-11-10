@@ -3,6 +3,8 @@
 *.ipr
 *.class
 .idea/*
+nbproject/private/
+
 # Package Files #
 *.jar
 *.war
