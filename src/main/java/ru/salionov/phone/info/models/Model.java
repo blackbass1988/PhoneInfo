@@ -12,4 +12,9 @@ public class Model {
     String bigPicture;
     Details details;
 
+    public Model(String name, String link, String thumbNail) {
+        this.name = name;
+        this.link = link;
+        this.thumbNail = thumbNail;
+    }
 }

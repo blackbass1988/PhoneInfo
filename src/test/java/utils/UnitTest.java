@@ -1,11 +1,21 @@
 package utils;
 
 import junit.framework.Assert;
+import org.apache.log4j.PropertyConfigurator;
+import org.junit.BeforeClass;
+import ru.salionov.phone.info.support.Configuration;
 
 /**
  * @author blackbass <o.salionov@zmeke.com>
  */
 public class UnitTest {
+
+    @BeforeClass
+    public static void prepareLog4j() {
+        String logFile = Configuration.getProperty("log4j.path", "log4j.properties");
+        PropertyConfigurator.configure(Configuration.CONF_BASE_DIR + logFile);
+    }
+
     public static void assertEquals(Object x, Object y) {
         Assert.assertEquals(x, y);
     }
