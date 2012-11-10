@@ -37,7 +37,7 @@ public class ModelCollector extends Collector {
     }
 
     private Model parseModel(Element model) {
-        return new Model(model.select("a").html(), HOST + model.select("a").attr("href"),
+        return new Model(this.brand, model.select("a").select("strong").html(), HOST + model.select("a").attr("href"),
                          model.select("img").first().attr("src"));
     }
 
@@ -45,7 +45,7 @@ public class ModelCollector extends Collector {
     public List<Model> getModelList() {
         Logger.debug("Processing %s", link);
         Elements page = getModelsPage();
-        for (Element model: page.select(modelsSelector)) {
+        for (Element model : page.select(modelsSelector)) {
             modelList.add(parseModel(model));
         }
         Element nextPageA = page.select(nextPageSelector).first();
@@ -53,7 +53,6 @@ public class ModelCollector extends Collector {
             this.link = HOST + nextPageA.attr("href");
             getModelList();
         }
-        Logger.debug("Total models: %s", modelList.size());
         return modelList;
     }
 }
