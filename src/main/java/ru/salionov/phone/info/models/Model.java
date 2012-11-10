@@ -14,7 +14,7 @@ public class Model {
     private String link;
     private String thumbNail;
     private String bigPicture;
-    private Details details;
+    private Feature feature;
 
     public Model(Brand brand, String name, String link, String thumbNail) {
         this.brand = brand;
@@ -48,11 +48,15 @@ public class Model {
         return bigPicture;
     }
 
-    public Details getDetails() {
-        return details;
+    public Feature getFeature() {
+        return feature;
     }
 
     public List<String> getAdditionalName() {
         return additionalName;
+    }
+
+    public void setBigPicture(String bigPicture) {
+        this.bigPicture = bigPicture;
     }
 }

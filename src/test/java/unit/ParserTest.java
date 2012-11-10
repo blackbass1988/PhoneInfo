@@ -2,6 +2,7 @@ package unit;
 
 import org.junit.Test;
 import ru.salionov.phone.info.collector.BrandCollector;
+import ru.salionov.phone.info.collector.FeatureCollector;
 import ru.salionov.phone.info.collector.ModelCollector;
 import ru.salionov.phone.info.models.Brand;
 import ru.salionov.phone.info.models.Model;
@@ -24,10 +25,18 @@ public class ParserTest extends UnitTest {
         ModelCollector modelCollector = new ModelCollector(nokia);
         List<Model> modelList = modelCollector.getModelList();
         Logger.info("total models %s", modelList.size());
-        Logger.info("name: %s,\n thumbnail: %s\n link: %s", modelList.get(0).getName(),
-                    modelList.get(0).getThumbNail(), modelList.get(0).getLink());
         assertNotNull(modelList);
         assertFalse(modelList.isEmpty());
-        assertEquals(modelList.get(0).getBrand(), nokia);
+        Model nokia109 = modelList.get(0);
+
+        Logger.info("name: %s,\n thumbnail: %s\n link: %s", nokia109.getName(),
+                    nokia109.getThumbNail(), nokia109.getLink());
+        assertEquals(nokia109.getBrand(), nokia);
+
+
+        FeatureCollector fc = new FeatureCollector(nokia109);
+        fc.getFeatures();
+
+
     }
 }
