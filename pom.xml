@@ -7,6 +7,18 @@
     <groupId>ru.salionov</groupId>
     <artifactId>PhoneInfo</artifactId>
     <version>0.01</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.6.3</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+        </dependency>
+    </dependencies>
 
 
 </project>
