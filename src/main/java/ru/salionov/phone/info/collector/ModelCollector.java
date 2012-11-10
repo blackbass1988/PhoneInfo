@@ -4,12 +4,12 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import ru.salionov.phone.info.models.Brand;
 import ru.salionov.phone.info.models.Model;
-import ru.salionov.phone.info.utils.Logger;
+import ru.salionov.phone.info.support.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static ru.salionov.phone.info.service.Constants.HOST;
+import static ru.salionov.phone.info.support.Constants.HOST;
 
 /**
  * @author blackbass <o.salionov@zmeke.com>

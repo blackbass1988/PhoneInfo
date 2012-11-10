@@ -5,7 +5,7 @@ import ru.salionov.phone.info.collector.BrandCollector;
 import ru.salionov.phone.info.collector.ModelCollector;
 import ru.salionov.phone.info.models.Brand;
 import ru.salionov.phone.info.models.Model;
-import ru.salionov.phone.info.utils.Logger;
+import ru.salionov.phone.info.support.Logger;
 import utils.UnitTest;
 
 import java.util.List;

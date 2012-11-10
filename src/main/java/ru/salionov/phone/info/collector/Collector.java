@@ -6,7 +6,7 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 
-import static ru.salionov.phone.info.service.Constants.*;
+import static ru.salionov.phone.info.support.Constants.*;
 
 /**
  * @author blackbass <o.salionov@zmeke.com>

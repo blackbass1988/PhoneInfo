@@ -1,4 +1,4 @@
-package ru.salionov.phone.info.service;
+package ru.salionov.phone.info.support;
 
 /**
  * @author blackbass <o.salionov@zmeke.com>

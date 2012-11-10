@@ -7,7 +7,7 @@ import ru.salionov.phone.info.models.Brand;
 import java.util.ArrayList;
 import java.util.List;
 
-import static ru.salionov.phone.info.service.Constants.HOST;
+import static ru.salionov.phone.info.support.Constants.HOST;
 
 /**
  * @author blackbass <o.salionov@zmeke.com>
