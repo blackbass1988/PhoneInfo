@@ -6,7 +6,7 @@ import ru.salionov.phone.info.collector.FeatureCollector;
 import ru.salionov.phone.info.collector.ModelCollector;
 import ru.salionov.phone.info.models.Brand;
 import ru.salionov.phone.info.models.Feature;
-import ru.salionov.phone.info.models.Model;
+import ru.salionov.phone.info.models.Mark;
 import ru.salionov.phone.info.support.Logger;
 import utils.UnitTest;
 
@@ -24,11 +24,11 @@ public class ParserTest extends UnitTest {
         Brand nokia = list.get(0);
         assertEquals(nokia.getName(), "Nokia");
         ModelCollector modelCollector = new ModelCollector(nokia);
-        List<Model> modelList = modelCollector.getModelList();
-        Logger.info("total models %s", modelList.size());
-        assertNotNull(modelList);
-        assertFalse(modelList.isEmpty());
-        Model nokia109 = modelList.get(0);
+        List<Mark> markList = modelCollector.getMarkList();
+        Logger.info("total models %s", markList.size());
+        assertNotNull(markList);
+        assertFalse(markList.isEmpty());
+        Mark nokia109 = markList.get(0);
 
         Logger.info("name: %s,\n thumbnail: %s\n link: %s", nokia109.getName(),
                     nokia109.getThumbNail(), nokia109.getLink());
@@ -39,7 +39,7 @@ public class ParserTest extends UnitTest {
         Feature nokiaF = fc.getFeatures();
 
         assertNotNull(nokiaF);
-        assertEquals(nokiaF.getModel(), nokia109);
+        assertEquals(nokiaF.getMark(), nokia109);
         assertEquals(nokiaF.getInfo2G(), "GSM 900 / 1800");
     }
 }

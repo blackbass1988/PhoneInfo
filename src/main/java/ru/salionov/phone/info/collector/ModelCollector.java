@@ -3,7 +3,7 @@ package ru.salionov.phone.info.collector;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import ru.salionov.phone.info.models.Brand;
-import ru.salionov.phone.info.models.Model;
+import ru.salionov.phone.info.models.Mark;
 import ru.salionov.phone.info.support.Logger;
 
 import java.util.ArrayList;
@@ -22,12 +22,12 @@ public class ModelCollector extends Collector {
 
     Brand brand;
     String link;
-    List<Model> modelList;
+    List<Mark> markList;
 
     public ModelCollector(Brand brand) {
         this.brand = brand;
         this.link = brand.getLink(); // set default link
-        this.modelList = new ArrayList<Model>();
+        this.markList = new ArrayList<Mark>();
 
     }
 
@@ -36,23 +36,23 @@ public class ModelCollector extends Collector {
         return getElements(link);
     }
 
-    private Model parseModel(Element model) {
-        return new Model(this.brand, model.select("a").select("strong").html(), HOST + model.select("a").attr("href"),
+    private Mark parseModel(Element model) {
+        return new Mark(this.brand, model.select("a").select("strong").html(), HOST + model.select("a").attr("href"),
                          model.select("img").first().attr("src"));
     }
 
 
-    public List<Model> getModelList() {
+    public List<Mark> getMarkList() {
         Logger.debug("Processing %s", link);
         Elements page = getModelsPage();
         for (Element model : page.select(modelsSelector)) {
-            modelList.add(parseModel(model));
+            markList.add(parseModel(model));
         }
         Element nextPageA = page.select(nextPageSelector).first();
 //        if (nextPageA != null && nextPageA.attr("href") != null) {
 //            this.link = HOST + nextPageA.attr("href");
-//            getModelList();
+//            getMarkList();
 //        }
-        return modelList;
+        return markList;
     }
 }

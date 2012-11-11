@@ -11,12 +11,12 @@ public class Brand {
     String name;
     String link;
 
-    List<Model> modelList;
+    List<Mark> markList;
 
     public Brand(String name, String link) {
         this.name = name;
         this.link = link;
-        this.modelList = new ArrayList<Model>();
+        this.markList = new ArrayList<Mark>();
     }
 
     public String getName() {
@@ -27,8 +27,8 @@ public class Brand {
         return link;
     }
 
-    public List<Model> getModelList() {
-        return modelList;
+    public List<Mark> getMarkList() {
+        return markList;
     }
 
     public String toString(){

@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class Feature {
 
-    private Model model;
+    private Mark mark;
 
     private String info2G;
     private String info3G;
@@ -56,17 +56,17 @@ public class Feature {
 
     private List<String> alternativeNames;
 
-    public Feature(Model model) {
-        this.setModel(model);
+    public Feature(Mark mark) {
+        this.setMark(mark);
         this.setAlternativeNames(new ArrayList<String>());
     }
 
-    public Model getModel() {
-        return model;
+    public Mark getMark() {
+        return mark;
     }
 
-    public void setModel(Model model) {
-        this.model = model;
+    public void setMark(Mark mark) {
+        this.mark = mark;
     }
 
     public String getInfo2G() {
@@ -426,7 +426,7 @@ public class Feature {
     }
 
     public String toString() {
-        return String.format("Feature{model: \"%s\", altNames: \"%s\", info2G: \"%s\", info3G: \"%s\", " +
+        return String.format("Feature{mark: \"%s\", altNames: \"%s\", info2G: \"%s\", info3G: \"%s\", " +
                                      "info4G: \"%s\", sim: \"%s\", announced: \"%s\", status: \"%s\", " +
                                      "dimensions: \"%s\", displayMultitouch: \"%s\", displayProtection: \"%s\"," +
                                      "alertTypes: \"%s\", loudspeaker: \"%s\", miniJack: \"%s\", " +
@@ -440,7 +440,7 @@ public class Feature {
                                      "featuresOther: \"%s\", batteryCommon: \"%s\", batteryStandBy: \"%s\", " +
                                      "batteryTalkTime: \"%s\", weight: \"%s\", displayType: \"%s\", " +
                                      "displaySize: \"%s\", memoryCardSlot: \"%s\"}",
-                             model.getName(), alternativeNames.toString(), info2G, info3G, info4G, sim, announced,
+                             mark.getName(), alternativeNames.toString(), info2G, info3G, info4G, sim, announced,
                              status, dimensions, displayMultitouch, displayProtection, alertTypes, loudspeaker,
                              miniJack, memoryInternal, dataGPRS, dataEDGE, dataSpeed, dataWLAN, dataBluetooth,
                              dataNFC, dataUSB, cameraPrimary, cameraFeatures, cameraVideo, cameraSecondary,

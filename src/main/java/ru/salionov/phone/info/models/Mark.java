@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * @author blackbass <o.salionov@zmeke.com>
  */
-public class Model {
+public class Mark {
 
     private Brand brand;
     private String name;
@@ -16,7 +16,7 @@ public class Model {
     private String bigPicture;
     private Feature feature;
 
-    public Model(Brand brand, String name, String link, String thumbNail) {
+    public Mark(Brand brand, String name, String link, String thumbNail) {
         this.brand = brand;
         this.name = name;
         this.link = link;
@@ -25,7 +25,7 @@ public class Model {
     }
 
     public String toString() {
-        return String.format("Model{brand: \"%s\", name: \"%s\"}", getBrand().getName(), getName());
+        return String.format("Mark{brand: \"%s\", name: \"%s\"}", getBrand().getName(), getName());
     }
 
     public Brand getBrand() {

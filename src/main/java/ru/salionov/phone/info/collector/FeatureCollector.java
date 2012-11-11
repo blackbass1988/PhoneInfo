@@ -3,7 +3,7 @@ package ru.salionov.phone.info.collector;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import ru.salionov.phone.info.models.Feature;
-import ru.salionov.phone.info.models.Model;
+import ru.salionov.phone.info.models.Mark;
 
 import java.util.Arrays;
 import java.util.regex.Matcher;
@@ -14,18 +14,18 @@ import java.util.regex.Pattern;
  */
 public class FeatureCollector extends Collector {
 
-    private Model model;
+    private Mark mark;
 
 
-    public FeatureCollector(Model model) {
-        this.model = model;
+    public FeatureCollector(Mark mark) {
+        this.mark = mark;
     }
 
     public Feature getFeatures() {
         final String featureDiv = "div#main";
-        Elements featureDivElement = getElements(model.getLink()).select(featureDiv);
-        model.setBigPicture(featureDivElement.select("div#specs-cp-pic img").attr("src"));
-        Feature feature = new Feature(model);
+        Elements featureDivElement = getElements(mark.getLink()).select(featureDiv);
+        mark.setBigPicture(featureDivElement.select("div#specs-cp-pic img").attr("src"));
+        Feature feature = new Feature(mark);
         Element preInfo = featureDivElement.select("div#specs-list p").first();
         if (preInfo != null) {
             final Pattern preInfoPattern = Pattern.compile("(?<=Also known as )(.+)");
