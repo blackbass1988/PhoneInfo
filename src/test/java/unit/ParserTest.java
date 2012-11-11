@@ -1,5 +1,6 @@
 package unit;
 
+import com.google.gson.Gson;
 import org.junit.Test;
 import ru.salionov.phone.info.collector.BrandCollector;
 import ru.salionov.phone.info.collector.FeatureCollector;
@@ -10,6 +11,7 @@ import ru.salionov.phone.info.models.Mark;
 import ru.salionov.phone.info.support.Logger;
 import utils.UnitTest;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -41,5 +43,18 @@ public class ParserTest extends UnitTest {
         assertNotNull(nokiaF);
         assertEquals(nokiaF.getMark(), nokia109);
         assertEquals(nokiaF.getInfo2G(), "GSM 900 / 1800");
+
+        List<Feature> featureList = new ArrayList<Feature>();
+        int i = 0;
+        for (Mark mark: markList) {
+            Logger.info("%s Processing %s", i, mark);
+            FeatureCollector featureCollector = new FeatureCollector(mark);
+            featureList.add(featureCollector.getFeatures());
+            i++;
+        }
+
+        String json = new Gson().toJson(featureList);
+        assertNotNull(json);
+        Logger.info(json);
     }
 }
