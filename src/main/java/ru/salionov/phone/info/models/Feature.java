@@ -424,5 +424,30 @@ public class Feature {
     public void appendAlternativeNames(String aName) {
         this.alternativeNames.add(aName);
     }
+
+    public String toString() {
+        return String.format("Feature{model: \"%s\", altNames: \"%s\", info2G: \"%s\", info3G: \"%s\", " +
+                                     "info4G: \"%s\", sim: \"%s\", announced: \"%s\", status: \"%s\", " +
+                                     "dimensions: \"%s\", displayMultitouch: \"%s\", displayProtection: \"%s\"," +
+                                     "alertTypes: \"%s\", loudspeaker: \"%s\", miniJack: \"%s\", " +
+                                     "memoryInternal: \"%s\", dataGPRS: \"%s\", dataEDGE: \"%s\", dataSpeed: \"%s\"," +
+                                     "dataWLAN: \"%s\", dataBluetooth: \"%s\", dataNFC: \"%s\", dataUSB: \"%s\"," +
+                                     "cameraPrimary: \"%s\", cameraFeatures: \"%s\", cameraVideo: \"%s\", " +
+                                     "cameraSecondary: \"%s\", featuresOS: \"%s\", featuresChipset: \"%s\"," +
+                                     "featuresCPU: \"%s\", featuresGPU: \"%s\", featuresSensors: \"%s\", " +
+                                     "featuresMessaging: \"%s\", featuresBrowser: \"%s\", featuresRadio: \"%s\"," +
+                                     "featuresGPS: \"%s\", featuresJAVA: \"%s\", featuresColors: \"%s\", " +
+                                     "featuresOther: \"%s\", batteryCommon: \"%s\", batteryStandBy: \"%s\", " +
+                                     "batteryTalkTime: \"%s\", weight: \"%s\", displayType: \"%s\", " +
+                                     "displaySize: \"%s\", memoryCardSlot: \"%s\"}",
+                             model.getName(), alternativeNames.toString(), info2G, info3G, info4G, sim, announced,
+                             status, dimensions, displayMultitouch, displayProtection, alertTypes, loudspeaker,
+                             miniJack, memoryInternal, dataGPRS, dataEDGE, dataSpeed, dataWLAN, dataBluetooth,
+                             dataNFC, dataUSB, cameraPrimary, cameraFeatures, cameraVideo, cameraSecondary,
+                             featuresOS, featuresChipset, featuresCPU, featuresGPU, featuresSensors,
+                             featuresMessaging, featuresBrowser, featuresRadio, featuresGPS, featuresJAVA,
+                             featuresColors, featuresOther, batteryCommon, batteryStandBy, batteryTalkTime,
+                             weight, displayType, displaySize, memoryCardSlot);
+    }
 }
 
