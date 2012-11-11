@@ -5,6 +5,7 @@ import ru.salionov.phone.info.collector.BrandCollector;
 import ru.salionov.phone.info.collector.FeatureCollector;
 import ru.salionov.phone.info.collector.ModelCollector;
 import ru.salionov.phone.info.models.Brand;
+import ru.salionov.phone.info.models.Feature;
 import ru.salionov.phone.info.models.Model;
 import ru.salionov.phone.info.support.Logger;
 import utils.UnitTest;
@@ -35,8 +36,10 @@ public class ParserTest extends UnitTest {
 
 
         FeatureCollector fc = new FeatureCollector(nokia109);
-        fc.getFeatures();
+        Feature nokiaF = fc.getFeatures();
 
-
+        assertNotNull(nokiaF);
+        assertEquals(nokiaF.getModel(), nokia109);
+        assertEquals(nokiaF.getInfo2G(), "GSM 900 / 1800");
     }
 }

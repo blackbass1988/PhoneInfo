@@ -4,7 +4,6 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import ru.salionov.phone.info.models.Feature;
 import ru.salionov.phone.info.models.Model;
-import ru.salionov.phone.info.support.Logger;
 
 import java.util.Arrays;
 import java.util.regex.Matcher;
@@ -22,7 +21,7 @@ public class FeatureCollector extends Collector {
         this.model = model;
     }
 
-    public void getFeatures() {
+    public Feature getFeatures() {
         final String featureDiv = "div#main";
         Elements featureDivElement = getElements(model.getLink()).select(featureDiv);
         model.setBigPicture(featureDivElement.select("div#specs-cp-pic img").attr("src"));
@@ -40,8 +39,7 @@ public class FeatureCollector extends Collector {
         Elements featureList = featureDivElement.select("div#specs-list table");
         parseFeatures(feature, featureList);
 
-        Logger.info(feature.toString());
-
+        return feature;
     }
 
     private String getFeatureValue(Element featureBlock, String featureName) {
