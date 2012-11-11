@@ -49,10 +49,10 @@ public class ModelCollector extends Collector {
             modelList.add(parseModel(model));
         }
         Element nextPageA = page.select(nextPageSelector).first();
-        if (nextPageA != null && nextPageA.attr("href") != null) {
-            this.link = HOST + nextPageA.attr("href");
-            getModelList();
-        }
+//        if (nextPageA != null && nextPageA.attr("href") != null) {
+//            this.link = HOST + nextPageA.attr("href");
+//            getModelList();
+//        }
         return modelList;
     }
 }

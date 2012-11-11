@@ -1,14 +1,18 @@
 package ru.salionov.phone.info.models;
 
-import org.jsoup.select.Elements;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author blackbass <o.salionov@zmeke.com>
  */
 public class Feature {
-    private String a2G;
-    private String a3G;
-    private String a4G;
+
+    private Model model;
+
+    private String info2G;
+    private String info3G;
+    private String info4G;
     private String sim;
     private String announced;
     private String status;
@@ -50,267 +54,375 @@ public class Feature {
     private String displaySize;
     private String memoryCardSlot;
 
-    public Feature(Elements featureDivElement) {
-//
-//        .set2G(featureDiv)
-//                .set3G(featureDiv)
-//                .set4G(featureDiv)
-//                .setSim(featureDiv)
-//                .setAnnounced(featureDiv)
-//                .setStatus(featureDiv)
-//                .setDimensions(featureDiv)
-//                .setWeight(featureDiv)
-//                .setDisplayType(featureDiv)
-//                .setDisplaySize(featureDiv)
-//                .setDisplayMultitouch(featureDiv)
-//                .setDisplayProtection(featureDiv)
-//                .setAlertTypes(featureDiv)
-//                .setLoudspeaker(featureDiv)
-//                .setminiJack(featureDiv)
-//                .setMemoryCardSlot(featureDiv)
-//                .setMemoryInternal(featureDiv)
-//                .setDataGPRS(featureDiv)
-//                .setDataEDGE(featureDiv)
-//                .setDataSpeed(featureDiv)
-//                .setDataWLAN(featureDiv)
-//                .setDataBluetooth(featureDiv)
-//                .setDataNFC(featureDiv)
-//                .setDataUSB(featureDiv)
-//                .setCameraPrimary(featureDiv)
-//                .setCameraFeatures(featureDiv)
-//                .setCameraVideo(featureDiv)
-//                .setCameraSecondary(featureDiv)
-//                .setFeaturesOS(featureDiv)
-//                .setFeaturesChipset(featureDiv)
-//                .setFeaturesCPU(featureDiv)
-//                .setFeaturesGPU(featureDiv)
-//                .setFeaturesSensors(featureDiv)
-//                .setFeaturesMessaging(featureDiv)
-//                .setFeaturesBrowser(featureDiv)
-//                .setFeaturesRadio(featureDiv)
-//                .setFeaturesGPS(featureDiv)
-//                .setFeaturesJAVA(featureDiv)
-//                .setFeaturesColors(featureDiv)
-//                .setFeaturesOther(featureDiv)
-//                .setBatteryCommon(featureDiv)
-//                .setBatteryStandBy(featureDiv)
-//                .setBatteryTalkTime(featureDiv);
+    private List<String> alternativeNames;
+
+    public Feature(Model model) {
+        this.setModel(model);
+        this.setAlternativeNames(new ArrayList<String>());
     }
 
-    public Feature set2G(String a2G) {
-        this.a2G = a2G;
-        return this;
+    public Model getModel() {
+        return model;
     }
 
-    public Feature set3G(String a3G) {
-        this.a3G = a3G;
-        return this;
+    public void setModel(Model model) {
+        this.model = model;
     }
 
-    public Feature set4G(String a4G) {
-        this.a4G = a4G;
-        return this;
+    public String getInfo2G() {
+        return info2G;
     }
 
-    public Feature setSim(String sim) {
+    public void setInfo2G(String info2G) {
+        this.info2G = info2G;
+    }
+
+    public String getInfo3G() {
+        return info3G;
+    }
+
+    public void setInfo3G(String info3G) {
+        this.info3G = info3G;
+    }
+
+    public String getInfo4G() {
+        return info4G;
+    }
+
+    public void setInfo4G(String info4G) {
+        this.info4G = info4G;
+    }
+
+    public String getSim() {
+        return sim;
+    }
+
+    public void setSim(String sim) {
         this.sim = sim;
-        return this;
     }
 
-    public Feature setAnnounced(String announced) {
+    public String getAnnounced() {
+        return announced;
+    }
+
+    public void setAnnounced(String announced) {
         this.announced = announced;
-        return this;
     }
 
-    public Feature setStatus(String status) {
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
         this.status = status;
-        return this;
     }
 
-    public Feature setDimensions(String dimensions) {
+    public String getDimensions() {
+        return dimensions;
+    }
+
+    public void setDimensions(String dimensions) {
         this.dimensions = dimensions;
-        return this;
     }
 
-    public Feature setWeight(String weight) {
-        this.weight = weight;
-        return this;
+    public String getDisplayMultitouch() {
+        return displayMultitouch;
     }
 
-    public Feature setDisplayType(String displayType) {
-        this.displayType = displayType;
-        return this;
-    }
-
-    public Feature setDisplaySize(String displaySize) {
-        this.displaySize = displaySize;
-        return this;
-    }
-
-    public Feature setDisplayMultitouch(String displayMultitouch) {
+    public void setDisplayMultitouch(String displayMultitouch) {
         this.displayMultitouch = displayMultitouch;
-        return this;
     }
 
-    public Feature setDisplayProtection(String displayProtection) {
+    public String getDisplayProtection() {
+        return displayProtection;
+    }
+
+    public void setDisplayProtection(String displayProtection) {
         this.displayProtection = displayProtection;
-        return this;
     }
 
-    public Feature setAlertTypes(String alertTypes) {
+    public String getAlertTypes() {
+        return alertTypes;
+    }
+
+    public void setAlertTypes(String alertTypes) {
         this.alertTypes = alertTypes;
-        return this;
     }
 
-    public Feature setLoudspeaker(String loudspeaker) {
+    public String getLoudspeaker() {
+        return loudspeaker;
+    }
+
+    public void setLoudspeaker(String loudspeaker) {
         this.loudspeaker = loudspeaker;
-        return this;
     }
 
-    public Feature setminiJack(String miniJack) {
+    public String getMiniJack() {
+        return miniJack;
+    }
+
+    public void setMiniJack(String miniJack) {
         this.miniJack = miniJack;
-        return this;
     }
 
-    public Feature setMemoryCardSlot(String memoryCardSlot) {
-        this.memoryCardSlot = memoryCardSlot;
-        return this;
+    public String getMemoryInternal() {
+        return memoryInternal;
     }
 
-    public Feature setMemoryInternal(String memoryInternal) {
+    public void setMemoryInternal(String memoryInternal) {
         this.memoryInternal = memoryInternal;
-        return this;
     }
 
-    public Feature setDataGPRS(String dataGPRS) {
+    public String getDataGPRS() {
+        return dataGPRS;
+    }
+
+    public void setDataGPRS(String dataGPRS) {
         this.dataGPRS = dataGPRS;
-        return this;
     }
 
-    public Feature setDataEDGE(String dataEDGE) {
+    public String getDataEDGE() {
+        return dataEDGE;
+    }
+
+    public void setDataEDGE(String dataEDGE) {
         this.dataEDGE = dataEDGE;
-        return this;
     }
 
-    public Feature setDataSpeed(String dataSpeed) {
+    public String getDataSpeed() {
+        return dataSpeed;
+    }
+
+    public void setDataSpeed(String dataSpeed) {
         this.dataSpeed = dataSpeed;
-        return this;
     }
 
-    public Feature setDataWLAN(String dataWLAN) {
+    public String getDataWLAN() {
+        return dataWLAN;
+    }
+
+    public void setDataWLAN(String dataWLAN) {
         this.dataWLAN = dataWLAN;
-        return this;
     }
 
-    public Feature setDataBluetooth(String dataBluetooth) {
+    public String getDataBluetooth() {
+        return dataBluetooth;
+    }
+
+    public void setDataBluetooth(String dataBluetooth) {
         this.dataBluetooth = dataBluetooth;
-        return this;
     }
 
-    public Feature setDataNFC(String dataNFC) {
+    public String getDataNFC() {
+        return dataNFC;
+    }
+
+    public void setDataNFC(String dataNFC) {
         this.dataNFC = dataNFC;
-        return this;
     }
 
-    public Feature setDataUSB(String dataUSB) {
+    public String getDataUSB() {
+        return dataUSB;
+    }
+
+    public void setDataUSB(String dataUSB) {
         this.dataUSB = dataUSB;
-        return this;
     }
 
-    public Feature setCameraPrimary(String cameraPrimary) {
+    public String getCameraPrimary() {
+        return cameraPrimary;
+    }
+
+    public void setCameraPrimary(String cameraPrimary) {
         this.cameraPrimary = cameraPrimary;
-        return this;
     }
 
-    public Feature setCameraFeatures(String cameraFeatures) {
+    public String getCameraFeatures() {
+        return cameraFeatures;
+    }
+
+    public void setCameraFeatures(String cameraFeatures) {
         this.cameraFeatures = cameraFeatures;
-        return this;
     }
 
-    public Feature setCameraVideo(String cameraVideo) {
+    public String getCameraVideo() {
+        return cameraVideo;
+    }
+
+    public void setCameraVideo(String cameraVideo) {
         this.cameraVideo = cameraVideo;
-        return this;
     }
 
-    public Feature setCameraSecondary(String cameraSecondary) {
+    public String getCameraSecondary() {
+        return cameraSecondary;
+    }
+
+    public void setCameraSecondary(String cameraSecondary) {
         this.cameraSecondary = cameraSecondary;
-        return this;
     }
 
-    public Feature setFeaturesOS(String featuresOS) {
+    public String getFeaturesOS() {
+        return featuresOS;
+    }
+
+    public void setFeaturesOS(String featuresOS) {
         this.featuresOS = featuresOS;
-        return this;
     }
 
-    public Feature setFeaturesChipset(String featuresChipset) {
+    public String getFeaturesChipset() {
+        return featuresChipset;
+    }
+
+    public void setFeaturesChipset(String featuresChipset) {
         this.featuresChipset = featuresChipset;
-        return this;
     }
 
-    public Feature setFeaturesCPU(String featuresCPU) {
+    public String getFeaturesCPU() {
+        return featuresCPU;
+    }
+
+    public void setFeaturesCPU(String featuresCPU) {
         this.featuresCPU = featuresCPU;
-        return this;
     }
 
-    public Feature setFeaturesGPU(String featuresGPU) {
+    public String getFeaturesGPU() {
+        return featuresGPU;
+    }
+
+    public void setFeaturesGPU(String featuresGPU) {
         this.featuresGPU = featuresGPU;
-        return this;
     }
 
-    public Feature setFeaturesSensors(String featuresSensors) {
+    public String getFeaturesSensors() {
+        return featuresSensors;
+    }
+
+    public void setFeaturesSensors(String featuresSensors) {
         this.featuresSensors = featuresSensors;
-        return this;
     }
 
-    public Feature setFeaturesMessaging(String featuresMessaging) {
+    public String getFeaturesMessaging() {
+        return featuresMessaging;
+    }
+
+    public void setFeaturesMessaging(String featuresMessaging) {
         this.featuresMessaging = featuresMessaging;
-        return this;
     }
 
-    public Feature setFeaturesBrowser(String featuresBrowser) {
+    public String getFeaturesBrowser() {
+        return featuresBrowser;
+    }
+
+    public void setFeaturesBrowser(String featuresBrowser) {
         this.featuresBrowser = featuresBrowser;
-        return this;
     }
 
-    public Feature setFeaturesRadio(String featuresRadio) {
+    public String getFeaturesRadio() {
+        return featuresRadio;
+    }
+
+    public void setFeaturesRadio(String featuresRadio) {
         this.featuresRadio = featuresRadio;
-        return this;
     }
 
+    public String getFeaturesGPS() {
+        return featuresGPS;
+    }
 
-    public Feature setFeaturesGPS(String featuresGPS) {
+    public void setFeaturesGPS(String featuresGPS) {
         this.featuresGPS = featuresGPS;
-        return this;
     }
 
-    public Feature setFeaturesJAVA(String featuresJAVA) {
+    public String getFeaturesJAVA() {
+        return featuresJAVA;
+    }
+
+    public void setFeaturesJAVA(String featuresJAVA) {
         this.featuresJAVA = featuresJAVA;
-        return this;
     }
 
-    public Feature setFeaturesColors(String featuresColors) {
+    public String getFeaturesColors() {
+        return featuresColors;
+    }
+
+    public void setFeaturesColors(String featuresColors) {
         this.featuresColors = featuresColors;
-        return this;
     }
 
-    public Feature setFeaturesOther(String featuresOther) {
+    public String getFeaturesOther() {
+        return featuresOther;
+    }
+
+    public void setFeaturesOther(String featuresOther) {
         this.featuresOther = featuresOther;
-        return this;
     }
 
-    public Feature setBatteryCommon(String batteryCommon) {
+    public String getBatteryCommon() {
+        return batteryCommon;
+    }
+
+    public void setBatteryCommon(String batteryCommon) {
         this.batteryCommon = batteryCommon;
-        return this;
     }
 
-    public Feature setBatteryStandBy(String batteryStandBy) {
+    public String getBatteryStandBy() {
+        return batteryStandBy;
+    }
+
+    public void setBatteryStandBy(String batteryStandBy) {
         this.batteryStandBy = batteryStandBy;
-        return this;
     }
 
-    public Feature setBatteryTalkTime(String batteryTalkTime) {
+    public String getBatteryTalkTime() {
+        return batteryTalkTime;
+    }
+
+    public void setBatteryTalkTime(String batteryTalkTime) {
         this.batteryTalkTime = batteryTalkTime;
-        return this;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
+
+    public String getDisplayType() {
+        return displayType;
+    }
+
+    public void setDisplayType(String displayType) {
+        this.displayType = displayType;
+    }
+
+    public String getDisplaySize() {
+        return displaySize;
+    }
+
+    public void setDisplaySize(String displaySize) {
+        this.displaySize = displaySize;
+    }
+
+    public String getMemoryCardSlot() {
+        return memoryCardSlot;
+    }
+
+    public void setMemoryCardSlot(String memoryCardSlot) {
+        this.memoryCardSlot = memoryCardSlot;
+    }
+
+    public List<String> getAlternativeNames() {
+        return alternativeNames;
+    }
+
+    public void setAlternativeNames(List<String> alternativeNames) {
+        this.alternativeNames = alternativeNames;
+    }
+
+    public void appendAlternativeNames(String aName) {
+        this.alternativeNames.add(aName);
     }
 }
 
